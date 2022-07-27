@@ -1,4 +1,4 @@
-<img src="docs/source/mypy_light.svg" alt="mypy logo" width="300px"/>
+<img src="https://gohorseprocess.com.br/wp-content/uploads/2017/05/horse21.png" alt="logo" width="300px"/>
 
 Python Study: Samples
 =======================================
