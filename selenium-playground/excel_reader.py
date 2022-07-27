@@ -13,6 +13,6 @@ def read(path, columnName):
     print("The content of the file is:\n", df)
     df = df.reset_index()  # make sure indexes pair with number of rows
     for index, row in df.iterrows():
-        print(row['Name'])
+        print(row[columnName])
         items.append(row[columnName])
     return items
