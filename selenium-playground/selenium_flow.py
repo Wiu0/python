@@ -55,6 +55,6 @@ class SeleniumReader:
 
 
 #Teste
-pathFolderFiles = os.getcwd() + "/python/selenium-playground/__files" 
-sel = SeleniumReader(pathFolderFiles + "/chromedriver/chromedriver_win32/chromedriver.exe", "https://www.greenfoot.org/home")
-sel.initCrawler("wiu")
+#pathFolderFiles = os.getcwd() + "/selenium-playground/__files" 
+#sel = SeleniumReader(pathFolderFiles + "/chromedriver/chromedriver_win32/chromedriver.exe", "https://www.greenfoot.org/home")
+#sel.initCrawler("wiu")
