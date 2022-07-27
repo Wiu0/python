@@ -1,3 +1,7 @@
+#download chromedriver. https://chromedriver.chromium.org/downloads
+#veri versao do chrome para baixar a versao correta do chrmedriver  
+#pip install selenium
+
 from ast import Assert
 from pprint import pprint
 from selenium import webdriver
@@ -5,6 +9,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import time 
 from selenium.webdriver.chrome.options import Options
+import os 
 
 class SeleniumReader:
 
@@ -20,23 +25,23 @@ class SeleniumReader:
         elem.clear()
         elem.send_keys(name)
         elem.send_keys(Keys.RETURN)
-        time.sleep(2)
+        time.sleep(1)
     
     def findByDiv(self, by, value):
         elem = self.driver.find_element(by, value)
-        time.sleep(2)
+        time.sleep(1)
         return elem
     
     def findByP(self, by, value):
         elem = self.driver.find_element(by, value)
-        time.sleep(2)
+        time.sleep(1)
         return elem
 
     def initCrawler(self, nameUser):
         self.findByTextBox(By.ID, "query", nameUser)
         list_dom_href = self.findByDiv(By.XPATH, "//*[@class='results members']")
         list_a_href = list_dom_href.find_elements(By.TAG_NAME, "a")
-        time.sleep(2)
+        time.sleep(1)
         for item in list_a_href:
             text = item.text
             print(text)
@@ -50,5 +55,6 @@ class SeleniumReader:
 
 
 #Teste
-sel = SeleniumReader("/Users/wiu/chromedriver", "https://www.greenfoot.org/home")
+pathFolderFiles = os.getcwd() + "/python/selenium-playground/__files" 
+sel = SeleniumReader(pathFolderFiles + "/chromedriver/chromedriver_win32/chromedriver.exe", "https://www.greenfoot.org/home")
 sel.initCrawler("wiu")
