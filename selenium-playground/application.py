@@ -5,10 +5,10 @@ import os
 def main():
     pathFolderFiles = os.getcwd() + "/python/selenium-playground/__files" 
     sel = selenium.SeleniumReader(pathFolderFiles + "/chromedriver/chromedriver_win32/chromedriver.exe", "https://www.greenfoot.org/home")
-    nomes = excel.read(pathFolderFiles + "/names.xlsx", 'Name')
-    print("Total de itens para processar é: ", len(nomes), "...") 
-    for name in nomes:
-        print("processando nome ", name)
-        sel.initCrawler(name)
+    items = excel.read(pathFolderFiles + "/names.xlsx", 'Name')
+    print("Total de itens para processar é: ", len(items), "...") 
+    for item in items:
+        print("processando item ", item)
+        sel.initCrawler(item)
     print("Fim de execução") 
 main()
